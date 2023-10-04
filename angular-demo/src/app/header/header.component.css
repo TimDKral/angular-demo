@@ -1,0 +1,76 @@
+:host {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+    margin: 8px 0;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-size: 3em;
+    animation: color-change 1s infinite, wobble 1s infinite;
+}
+
+@keyframes color-change {
+    0% {
+        color: rgb(255, 251, 0);
+        font-size: 14px;
+    }
+
+    50% {
+        color: rgb(30, 255, 0);
+        font-size: 18px;
+    }
+
+    100% {
+        color: rgb(255, 251, 0);
+        font-size: 14px;
+    }
+}
+
+@keyframes wobble {
+    0% {
+        transform: rotate(-1deg);
+    }
+
+    50% {
+        transform: rotate(1deg);
+    }
+
+    100% {
+        transform: rotate(-1deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        background-color: rgb(255, 251, 0);
+        font-size: 14px;
+    }
+
+    50% {
+        background-color: rgb(30, 255, 0);
+        font-size: 18px;
+    }
+
+    100% {
+        background-color: rgb(255, 251, 0);
+        font-size: 14px;
+    }
+}
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #e612c9;
+    color: white;
+    font-weight: 600;
+}

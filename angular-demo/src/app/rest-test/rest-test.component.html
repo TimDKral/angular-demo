@@ -1,0 +1,80 @@
+<p>rest-test works!</p>
+
+<h4>POST test 📮</h4>
+<div class="window">
+    <form (ngSubmit)="onPostSubmit(postForm.value)" #postForm="ngForm">
+        <div class="row">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" class="form-control" name="name" ngModel required>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <button class="btn btn-success" type="submit" [disabled]="!postForm.valid">Send POST!</button>
+        </div>
+    </form>
+    <br>
+    <div> postResponse: {{ postResponse }}</div>
+</div>
+
+
+<h4>PUT test 📤</h4>
+<div class="window">
+    <form (ngSubmit)="onPutSubmit(putForm.value)" #putForm="ngForm">
+        <div class="row">
+            <div class="form-group">
+                <label for="id">id</label>
+                <input type="number" id="id" class="form-control" name="id" ngModel required>
+            </div>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" class="form-control" name="name" ngModel required>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <button class="btn btn-success" type="submit" [disabled]="!putForm.valid">Send PUT!</button>
+        </div>
+    </form>
+    <br>
+    <div> putResponse: {{ putResponse }}</div>
+</div>
+
+
+<h4>GET test 🤗</h4>
+<div class="window">
+    <form (ngSubmit)="onGet(GetForm.value)" #GetForm="ngForm">
+        <div class="row">
+            <div class="form-group">
+                <label for="id">id</label>
+                <input type="number" id="id" class="form-control" name="id" ngModel required pattern="^[1-9]+[0-9]*$">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <button class="btn btn-success" type="submit" [disabled]="!GetForm.valid">Send GET!</button>
+        </div>
+    </form>
+    <br>
+    <div> getResponse: {{ getResponse }}</div>
+</div>
+
+
+
+<h4>DELETE test 🗑</h4>
+<div class="window">
+    <form (ngSubmit)="onDelete(deleteForm.value)" #deleteForm="ngForm">
+        <div class="row">
+            <div class="form-group">
+                <label for="id">id</label>
+                <input type="number" id="id" class="form-control" name="id" ngModel required pattern="^[1-9]+[0-9]*$">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <button class="btn btn-success" type="submit" [disabled]="!deleteForm.valid">Send DELETE!</button>
+        </div>
+    </form>
+    <div> delResponse: {{ delResponse }}</div>
+</div>

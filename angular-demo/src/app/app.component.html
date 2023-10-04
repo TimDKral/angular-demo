@@ -1,0 +1,32 @@
+<app-header></app-header>
+
+<a routerLink="asdf">Go to asdf!</a>
+<br>
+<a routerLink="zxcv">Go to zxcv!</a>
+<br>
+<a routerLink="reactivetemplate">Go to Reactive Template!</a>
+<br>
+<a routerLink="formtest">Go to Form Test!</a>
+<br>
+<a routerLink="rest-test">Go to Rest Test!</a>
+<br>
+
+
+<p *ngIf="userActivated">Activated!</p>
+
+<hr>
+<!-- <app-asdf></app-asdf> -->
+<div class="window">
+  <div className="title-bar">
+    <div className="title-bar-text">Test!</div>
+    <section class="content">
+
+      <div className="window-body">
+        <router-outlet></router-outlet>
+      </div>
+
+    </section>
+  </div>
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,51 @@
+<p>zxcv works!</p>
+
+<div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+    <form (ngSubmit)="onSubmit()" #f="ngForm">
+      <div class="form-group" ngModelGroup="userData"
+      #userData="ngModelGroup">
+        <label for="username">Username</label>
+        <input
+          type="text"
+          id="username"
+          class="form-control"
+          ngModel
+          name="username"
+          required
+          [ngModel]="defaultZxcv"
+          >
+      </div>
+      <div class="form-group">
+        <label for="email">email</label>
+        <input
+          type="text"
+          id="email"
+          class="form-control"
+          ngModel
+          name="email"
+          required
+          email
+          #email="ngModel">
+      </div>
+      <div class="help-block" *ngIf="!email.valid && email.touched">Plz enter valid value</div>
+      
+      <div class="form-group">
+        <textarea 
+        name="questionAnswer" 
+        id="" 
+        rows="3"
+        class="form-control"
+        [(ngModel)]="answer"></textarea>
+      </div>
+      <p>Echo: {{ answer }}</p>
+
+      <button 
+      class="btn btn-primary" 
+      type="submit"
+      [disabled]="!f.valid">Submit</button>
+    </form>
+  </div>
+
+  <hr>
+
+<button class="btn btn-primary" (click)="onActivate()">Activate</button>

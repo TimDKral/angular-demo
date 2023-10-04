@@ -1,0 +1,40 @@
+<p>reactivetemplate kinda works!</p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+        <div formGroupName="userData">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" formControlName="username" class="form-control">
+            <span *ngIf="!signupForm.get('userData.username').valid && signupForm.get('userData.username').touched"
+              class="help-block">Plz enter valid username
+            </span>
+          </div>
+          <div class="form-group">
+            <label for="email">email</label>
+            <input type="text" id="email" formControlName="email" class="form-control">
+          </div>
+        </div>
+
+        <div class="radio" *ngFor="let cat of category">
+          <label>
+            <input type="radio" formControlName="category" [value]="cat">{{ cat }}
+          </label>
+        </div>
+
+        <div formArrayName="epic">
+          <h4>Epic stuff</h4>
+          <button class="btn btn-default" type="button" (click)="onEpicButton()">Epic button
+          </button>
+          <!-- <div class="form-group" *ngFor="let epicControl of signupForm.get('epic')">
+            <input type="text" class="form-control" [formControlName]="i">
+          </div> -->
+        </div>
+
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
